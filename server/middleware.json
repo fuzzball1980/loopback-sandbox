@@ -31,9 +31,14 @@
     }
   },
   "session": {},
+  "session:after": {
+    "loopback#context": {},
+    "loopback#token": {}
+  },
   "auth": {},
   "parse": {},
   "routes": {
+    "./middleware/collectauditdata": {},
     "loopback#rest": {
       "paths": [
         "${restApiRoot}"

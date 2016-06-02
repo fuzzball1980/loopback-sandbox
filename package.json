@@ -14,8 +14,19 @@
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.4.0",
-    "loopback-datasource-juggler": "^2.39.0",
-    "serve-favicon": "^2.0.1"
+    "loopback-component-passport": "latest",
+    "loopback-component-storage": "latest",
+    "loopback-connector-postgresql": "latest",
+    "loopback-datasource-juggler": "latest",
+    "loopback-component-push": "latest",
+    "loopback-ds-timestamp-mixin": "latest",
+    "loopback-softdelete-mixin": "git+https://github.com/mobisoft2014/loopback-softdelete-mixin.git",
+    "loopback-ds-readonly-mixin": "latest",
+    "serve-favicon": "^2.0.1",
+    "bluebird": "^2.10.0",
+    "body-parser": "1.11.0",
+    "express-session": "1.10.2",
+    "connect-ensure-login": "0.1.1"
   },
   "devDependencies": {
     "jshint": "^2.5.6",

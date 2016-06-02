@@ -1,0 +1,19 @@
+{
+  "name": "container",
+  "plural": "containers",
+  "base": "Model",
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "property": "*",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "property": "*",
+    "permission": "DENY"
+  }],
+  "methods": []
+}
