@@ -1,0 +1,1 @@
+ docker run -ti --rm -v ~/revistas:/pdf bwits/pdf2htmlex pdf2htmlEX --zoom 1 --fit-width 500  --svg-embed-bitmap 0 --optimize-text 1 --correct-text-visibility 1 --bg-format jpg --embed-image 0 --svg-embed-bitmap 0  --split-pages 1 --page-filename 7_dias_665_baixa_page%d.html -f 1 -l 1 7_dias_665_baixa.pdf

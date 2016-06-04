@@ -1,0 +1,53 @@
+{
+  "name": "Publisher",
+  "plural": "Publishers",
+  "base": "PersistedModel",
+  "scope": {
+    "include": []
+  },
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "mixins": {
+    "TimeStamp": true,
+    "SoftDelete": true
+  },
+  "validations": [],
+  "relations": {
+    "magazines": {
+      "type": "hasMany",
+      "model": "Magazine",
+      "foreignKey": "publisherId"
+    }
+  },
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY"
+  }, {
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "DENY"
+  }],
+  "methods": {}
+}

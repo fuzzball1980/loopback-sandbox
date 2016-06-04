@@ -1,0 +1,87 @@
+{
+  "name": "Issue",
+  "plural": "Issues",
+  "base": "PersistedModel",
+  "scope": {
+    "include": []
+  },
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "string"
+    },
+    "year": {
+      "type": "number",
+      "required": false,
+      "length": 32
+    },
+    "number": {
+      "type": "string",
+      "required": false,
+      "length": 4
+    },
+    "sku": {
+      "type": "string",
+      "required": false
+    },
+    "free": {
+      "type": "boolean",
+      "required": false
+    },
+    "releaseAt": {
+      "type": "date",
+      "required": false
+    },
+    "exportedAt": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "mixins": {
+    "TimeStamp": true,
+    "SoftDelete": true
+  },
+  "validations": [],
+  "relations": {
+    "magazine": {
+      "type": "belongsTo",
+      "model": "Magazine",
+      "foreignKey": "magazineId"
+    },
+    "upload": {
+      "type": "belongsTo",
+      "model": "Upload",
+      "foreignKey": "uploadId"
+    }
+  },
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$unauthenticated",
+    "permission": "DENY"
+  }, {
+    "accessType": "READ",
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW"
+  }, {
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "DENY"
+  }],
+  "methods": {}
+}

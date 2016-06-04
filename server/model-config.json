@@ -9,7 +9,7 @@
     "mixins": [
       "loopback/common/mixins",
       "loopback/server/mixins",
-      "../common/mixins",
+
       "./mixins"
     ]
   },
@@ -96,12 +96,27 @@
       "permission": "DENY"
     }]
   },
-  "container": {
-    "dataSource": "localStorage",
-    "public": true
-  },
   "user": {
     "dataSource": "db",
+    "public": true
+  },
+  "Publisher": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Magazine": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Issue": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Upload": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ProcessMagazine": {
     "public": true
   }
 }

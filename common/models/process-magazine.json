@@ -1,6 +1,5 @@
 {
-  "name": "container",
-  "plural": "containers",
+  "name": "ProcessMagazine",
   "base": "Model",
   "acls": [{
     "accessType": "*",

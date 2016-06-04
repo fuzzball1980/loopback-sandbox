@@ -1,6 +1,6 @@
 {
-  "name": "Category",
-  "plural": "Categories",
+  "name": "Magazine",
+  "plural": "Magazines",
   "base": "PersistedModel",
   "scope": {
     "include": []
@@ -10,13 +10,28 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
     }
   },
   "mixins": {
-
+    "TimeStamp": true,
+    "SoftDelete": true
   },
   "validations": [],
   "relations": {
+    "publisher": {
+      "type": "belongsTo",
+      "model": "Publisher",
+      "foreignKey": "publisherId"
+    },
+    "issues": {
+      "type": "hasMany",
+      "model": "Issue",
+      "foreignKey": "magazineId"
+    }
   },
   "acls": [{
     "accessType": "*",
@@ -32,11 +47,6 @@
     "accessType": "READ",
     "principalType": "ROLE",
     "principalId": "$authenticated",
-    "permission": "ALLOW"
-  }, {
-    "accessType": "*",
-    "principalType": "ROLE",
-    "principalId": "$owner",
     "permission": "ALLOW"
   }, {
     "accessType": "*",
