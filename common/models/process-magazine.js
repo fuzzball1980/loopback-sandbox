@@ -5,7 +5,7 @@ module.exports = function(ProcessMagazine) {
 
   ProcessMagazine.beforeRemote('**', function(ctx, instance, next) {
     // TODO: check issue https://github.com/strongloop/loopback/issues/2400
-    console.log(ctx.methodString, JSON.stringify(ctx.req.body));
+    console.log('Issue with relations in the body: ', JSON.stringify(ctx.req.body));
 
     next();
   });
@@ -17,7 +17,7 @@ module.exports = function(ProcessMagazine) {
     error.stack = "Unknow Error";
 
     // TODO: check issue https://github.com/strongloop/loopback/issues/2400
-    console.log('Issue: ' + JSON.stringify(issue));
+    console.log('Issue without relations: ' + JSON.stringify(issue));
 
     var retVal = {};
     cb(null, retVal);
